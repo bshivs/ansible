@@ -1,0 +1,41 @@
+me: Update web servers
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: install apache
+    yum:
+      name: httpd
+      state: present
+    when: ansible_distribution == "CentOS"
+
+  - name: start apache
+    service:
+      name: httpd
+      state: started
+    when: ansible_distribution == "CentOS"
+
+  - name: enable apache
+    service:
+      name: httpd
+      enabled: yes
+    when: ansible_distribution == "CentOS"
+
+  - name: install apache
+    apt:
+      name: apache2
+      state: present
+    when: ansible_distribution == "Ubuntu"
+
+  - name: start apache
+    service:
+      name: apache2
+      state: started
+    when: ansible_distribution == "Ubuntu"
+
+  - name: enable apache
+    service:
+      name: apache2
+      enabled: yes
+    when: ansible_distribution == "Ubuntu"
+...

@@ -1,0 +1,11 @@
+me: Update n1 servers
+  hosts: n1
+  become: yes
+
+  tasks:
+  - name: copy static html file
+    copy:
+      src: static.html
+      dest: /var/www/html/static.html
+
+...

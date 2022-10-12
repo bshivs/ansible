@@ -1,0 +1,35 @@
+me: Update n1 servers
+  hosts: n1
+
+
+  tasks:
+  - name: create a directory
+    file:
+      path: /home/centos/n1_dir
+      state: directory
+
+  tasks:
+  - name: create a directory
+    file:
+      path: /home/centos/n11_dir
+      state: directory
+
+
+- name: Update n2 servers
+  hosts: n2
+
+
+  tasks:
+  - name: create a directory
+    file:
+      path: /home/centos/n2_dir
+      state: directory
+
+  tasks:
+  - name: create a directory
+    file:
+      path: /home/centos/n22_dir
+      state: directory
+
+
+...

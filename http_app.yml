@@ -1,0 +1,9 @@
+me: Update n1 servers
+  hosts: n1
+  become: yes
+
+  roles:
+  - httpd
+  - html
+
+...

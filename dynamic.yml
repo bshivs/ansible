@@ -1,0 +1,11 @@
+me: Update n1 servers
+  hosts: n1
+  become: yes
+
+  tasks:
+  - name: copy dynamic html file
+    template:
+      src: dynamic.j2
+      dest: /var/www/html/dynamic.html
+
+...
